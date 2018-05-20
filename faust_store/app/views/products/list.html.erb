@@ -8,28 +8,30 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>Details</th>
+            <th>Discount</th>
         </tr>
     </thead>
     <tbody>
         <% @products.each do |product|%>
             <% if product.quantity.to_i > 0 %>
-                <% if product.condition == 'good'%>
-                    <% cost = product.price.to_i%>
-                    <% cost = cost - cost*0.10%>
-                    <% product.price = cost%>
-                    <%= "10% off!"%>
-                <% elsif product.condition == 'average'%>
-                    <% cost = product.price.to_i%>
-                    <% cost = cost - cost*0.20%>
-                    <% product.price = cost%>
-                    <%= "20% off"%>
-                <% end %>
                 <tr>
                     <td><%= product.item %></td>
                     <td><%= product.img_file %></td>
                     <td><%= product.price %></td>
                     <td><%= product.quantity %></td>
                     <td><%= link_to "Details", "/products/#{product.pid}" %></td>
+                    <td><% if product.condition == 'good'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.10%>
+                            <% product.price = cost%>
+                            <%= "10% off!"%>
+                        <% elsif product.condition == 'average'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.20%>
+                            <% product.price = cost%>
+                            <%= "20% off"%>
+                        <% end %>
+                    </td>
                 </tr>
             <% end %>
         <% end %>
