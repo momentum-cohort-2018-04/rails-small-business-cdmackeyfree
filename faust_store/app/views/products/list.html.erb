@@ -13,11 +13,11 @@
     <tbody>
          <% @products.each do |product|%>
             <tr>
-                <td><%= product["item"] %></td>
-                <td><%= product["img_file"] %></td>
-                <td><%= product["price"] %></td>
-                <td><%= product["quantity"] %></td>
-                <td><%= link_to 'Details', "/products/#{product["pid"]}"%>
+                <td><%= product.item %></td>
+                <td><%= product.img_file %></td>
+                <td><%= product.price %></td>
+                <td><%= product.quantity %></td>
+                <td><%= link_to "Details", "/products/#{product.pid}" %></td>
             </tr>
         <% end %>
     </tbody>

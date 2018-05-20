@@ -1,2 +1,32 @@
-<h1>Products#detail</h1>
-<p>Find me in app/views/products/detail.html.erb</p>
+<h1>Detailed View</h1>
+<p>
+  <strong>Item</strong>
+  <%= @product.item %>
+</p>
+ 
+<p>
+  <% if ActionController::Base.helpers.resolve_asset_path("#{@product.img_file}.jpg")%>
+        <%= image_tag("#{@product.img_file}.jpg", class: 'detail_image') %>
+    <% end %>
+</p>
+
+<p>
+    <%= @product.description %>
+</p>
+
+<p>
+    <%= @product.price %>
+</p>
+
+<p>
+    <%= @product.category%>
+</p>
+
+<p>
+    <%= @product.quantity %>
+</p>
+
+<p>
+    <%= @product.dimension_w %> x <%= @product.dimension_h %> x <%= @product.dimension_l%>
+</p>
+
