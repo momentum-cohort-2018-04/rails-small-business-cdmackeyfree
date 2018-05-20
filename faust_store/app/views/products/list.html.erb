@@ -1,0 +1,24 @@
+<h1> Products </h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+         <% @products.each do |product|%>
+            <tr>
+                <td><%= product["item"] %></td>
+                <td><%= product["img_file"] %></td>
+                <td><%= product["price"] %></td>
+                <td><%= product["quantity"] %></td>
+                <td><%= link_to 'Details', "/products/#{product["pid"]}"%>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
