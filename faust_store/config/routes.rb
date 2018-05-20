@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'products#list'
-
+  root 'products#index'
+  get 'products/list' => 'products#list'
   get 'products/:pid' => 'products#detail'
 
 
