@@ -4,7 +4,7 @@
   <%= @product.item %>
 </p>
  
-<p>
+<p size="100px">
   <% if ActionController::Base.helpers.resolve_asset_path("#{@product.img_file}.jpg")%>
         <%= image_tag("#{@product.img_file}.jpg", class: 'detail_image') %>
     <% end %>

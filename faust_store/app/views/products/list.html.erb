@@ -1,6 +1,6 @@
 <h1> Products </h1>
 
-<table>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Item</th>
@@ -16,9 +16,9 @@
             <% if product.quantity.to_i > 0 %>
                 <tr>
                     <td><%= product.item %></td>
-                    <td class="img-thumbnail"> 
+                    <td> 
                         <% if ActionController::Base.helpers.resolve_asset_path("#{product.img_file}.jpg")%>
-                            <%= image_tag("#{product.img_file}.jpg")%>
+                           <%= image_tag("#{product.img_file}" + ".jpeg", size: 75) %>
                         <% end %>
                     </td>
                     <td><%= product.price %></td>
