@@ -16,7 +16,11 @@
             <% if product.quantity.to_i > 0 %>
                 <tr>
                     <td><%= product.item %></td>
-                    <td><%= product.img_file %></td>
+                    <td class="img-thumbnail"> 
+                        <% if ActionController::Base.helpers.resolve_asset_path("#{product.img_file}.jpg")%>
+                            <%= image_tag("#{product.img_file}.jpg")%>
+                        <% end %>
+                    </td>
                     <td><%= product.price %></td>
                     <td><%= product.quantity %></td>
                     <td><%= link_to "Details", "/products/#{product.pid}" %></td>
